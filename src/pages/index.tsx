@@ -51,6 +51,7 @@ const Login = () => {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+        ExibirError(errorMessage, 5000);
       });
   }
 
@@ -74,7 +75,15 @@ const Login = () => {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+        ExibirError(errorMessage, 5000);
       });
+  }
+
+  function ChangeLogin() {
+    setLogin(login === "cadastro" ? "login" : "cadastro");
+    setNome("");
+    setEmail("");
+    setPassword("");
   }
 
   return login === "cadastro" ? (
@@ -103,9 +112,7 @@ const Login = () => {
             Acesse sua conta agora mesmo.
           </p>
           <button
-            onClick={() =>
-              setLogin(login === "cadastro" ? "login" : "cadastro")
-            }
+            onClick={() => ChangeLogin()}
             className={`mt-4 w-56 h-10 rounded-3xl bg-[#1D267D] text-lg font-medium text-white
             hover:bg-[#0C134F] duration-500
           `}
@@ -253,7 +260,7 @@ const Login = () => {
             Faça seu cadastro agora mesmo.
           </p>
           <button
-            onClick={() => setLogin(login === "login" ? "cadastro" : "login")}
+            onClick={() => ChangeLogin()}
             className={`mt-4 w-56 h-10 rounded-3xl bg-[#1D267D] text-lg font-medium text-white
             hover:bg-[#0C134F] duration-500
           `}
