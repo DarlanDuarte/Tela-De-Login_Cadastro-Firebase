@@ -90,6 +90,7 @@ const Login = () => {
         className={` flex w-8/12 h-3/5 bg-white rounded-lg shadow-4xl
         md:w-11/12
         sm:w-full
+        
       `}
       >
         <div
@@ -237,7 +238,10 @@ const Login = () => {
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.5 }}
         transition={{ duration: 1 }}
-        className={` flex w-8/12 h-3/5 bg-white rounded-lg shadow-4xl`}
+        className={` flex w-8/12 h-3/5 bg-white rounded-lg shadow-4xl
+        md:w-11/12
+        sm:w-full
+        `}
       >
         <div
           className={`flex flex-col w-7/12 h-full bg-[#5C469C] justify-center items-center rounded-lg `}
